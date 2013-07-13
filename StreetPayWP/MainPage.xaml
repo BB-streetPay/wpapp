@@ -6,15 +6,56 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:bar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+	<phone:PhoneApplicationPage.Resources>
+		<DataTemplate x:Key="ItemTemplate">
+			<Grid Height="108" Width="456">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="4*"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock Text="{Binding Name}" Margin="5,0,0,57" Grid.Column="1" Grid.Row="0" FontFamily="Segoe WP SemiLight" FontSize="26.667"/>
+				<TextBlock Text="{Binding Description}" Margin="10,35,0,0" Grid.Column="1" TextTrimming="WordEllipsis" TextWrapping="Wrap"/>
+				<Image Source="{Binding Image}" HorizontalAlignment="Left" Width="86" Margin="0,0,0,10"/>
+			</Grid>
+		</DataTemplate>
+	</phone:PhoneApplicationPage.Resources>
 
-    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+
+    <shell:SystemTray.ProgressIndicator>
+        <shell:ProgressIndicator IsVisible="{Binding IsLoading}" IsIndeterminate="True" Text="{Binding BarText}" />
+    </shell:SystemTray.ProgressIndicator>
+
+        <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{Binding Source={StaticResource ProjectDataSource}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -41,12 +82,15 @@
 
         <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MI APLICACIÓN" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="nombre de la página" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0" toolkit:TurnstileFeatherEffect.FeatheringIndex="2">
+            	<Run Text="STREETPAY"/>
+            </TextBlock>
+            <TextBlock toolkit:TurnstileFeatherEffect.FeatheringIndex="1" Text="proyectos" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="Segoe WP Light" FontSize="53.333"/>
         </StackPanel>
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<ListBox HorizontalAlignment="Left" Height="622" SelectedItem="{Binding SelectedProject, Mode=TwoWay}"  toolkit:TiltEffect.IsTiltEnabled="True" toolkit:TurnstileFeatherEffect.FeatheringIndex="0" ItemTemplate="{StaticResource ItemTemplate}" ItemsSource="{Binding Collection}" VerticalAlignment="Top" Width="456"/>
 
         </Grid>
 
@@ -57,6 +101,12 @@
 
             Antes de enviarla, quita este código XAML y la propia imagen.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+        
     </Grid>
 
+    <bar:Bindable.ApplicationBar>
+        <bar:BindableApplicationBar>
+            <bar:BindableApplicationBarButton Text="escanear" IconUri="/Assets/Dark/feature.camera.png" Command="{Binding ScanImage}" />
+        </bar:BindableApplicationBar>
+    </bar:Bindable.ApplicationBar>
 </phone:PhoneApplicationPage>

@@ -8,18 +8,22 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using StreetPayWP.Resources;
+using StreetPayWP.ViewModels;
 
 namespace StreetPayWP
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        MainPageVM viewModel = new MainPageVM();
+
         // Constructor
         public MainPage()
         {
             InitializeComponent();
-
-            // Código de ejemplo para traducir ApplicationBar
-            //BuildLocalizedApplicationBar();
+            
+            DataContext = viewModel;
+            viewModel.IsLoading = true;
+            this.Loaded += (s, e) => viewModel.OnLoad();
         }
 
         // Código de ejemplo para compilar una ApplicationBar traducida

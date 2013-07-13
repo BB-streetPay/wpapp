@@ -12,5 +12,23 @@ namespace StreetPay.Library
         public string Name { get; set; }
         public string Description { get; set; }
         public List<Payment> Payments { get; set;}
+        public string Image
+        {
+            get
+            {
+                return Name.Replace(' ', '.') + ".jpg.to";
+            }
+        }
+
+        public int Funded
+        {
+            get
+            {
+                if (Payments == null)
+                    return 0;
+
+                return Payments.Select(x => x.Money).Sum();
+            }
+        }
     }
 }

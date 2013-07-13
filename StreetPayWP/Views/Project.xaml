@@ -1,0 +1,73 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="StreetPayWP.Project"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:StreetPayWP"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{Binding Source={StaticResource ProjectClass}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="STREETPAY" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding Name}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="Segoe WP Light" FontSize="53.333"/>
+        </StackPanel>
+
+        <!--ContentPanel. Colocar aquí el contenido adicional-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Image Source="{Binding Image}" Margin="10,10,0,0" Height="166" Width="282" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Description}" Margin="10,199,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="436" Height="236" TextWrapping="Wrap" FontFamily="Segoe WP SemiLight" FontSize="24"/>
+            <Slider HorizontalAlignment="Left" Margin="0,440,0,0" VerticalAlignment="Top" Width="446" Maximum="20" SmallChange="1" Height="90" Value="{Binding MoneyToPay, Mode=TwoWay}"/>
+            <Border local:MetroInMotion.Tilt="3" Tap="Border_Tap_1" Background="{StaticResource PhoneAccentBrush}"  Margin="60,530,60,37" Canvas.ZIndex="-35">
+                <TextBlock VerticalAlignment="Center" UseLayoutRounding="True" Margin="0,0,0,0" FontFamily="Segoe WP Light" TextAlignment="Center" LineStackingStrategy="BaselineToBaseline" FontSize="33.333">
+        			<Run Text="Pagar" />
+					<Run Text="{Binding MoneyToPay}"/>
+					<Run Text="€"/>
+                </TextBlock>
+            </Border>
+            <TextBlock Margin="395,65,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" FontFamily="Segoe WP Light" TextAlignment="Right">
+        		<Run  Text="{Binding TotalBacked}"  />
+				<Run Text="€" />
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="297,25,0,0" TextWrapping="Wrap" Text="Recaudado" VerticalAlignment="Top" Width="154" FontSize="29.333" FontFamily="Segoe WP Light" TextAlignment="Right"/>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

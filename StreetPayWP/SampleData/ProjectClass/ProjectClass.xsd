@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+      *********    NO MODIFIQUE ESTE ARCHIVO     *********
+      Este archivo se regenera mediante una herramienta de diseño.
+       Si realiza cambios en este archivo, puede causar errores.
+-->
+<xs:schema xmlns:blend="http://schemas.microsoft.com/expression/blend/2008" xmlns:tns="Expression.Blend.SampleData.ProjectClass" targetNamespace="Expression.Blend.SampleData.ProjectClass" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ProjectClass" type="tns:ProjectClass" />
+  <xs:complexType name="ProjectClass">
+    <xs:attribute blend:FormatParameters="50,8" name="Description" type="xs:string" />
+    <xs:attribute blend:Format="Nombre de la empresa" name="Name" type="xs:string" />
+    <xs:attribute name="Image" type="tns:Basic-Image" />
+    <xs:attribute blend:FormatParameters="3" name="TotalBacked" type="xs:double" />
+  </xs:complexType>
+  <xs:simpleType name="Basic-Image">
+    <xs:restriction base="xs:anyURI" />
+  </xs:simpleType>
+</xs:schema>

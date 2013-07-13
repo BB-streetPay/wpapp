@@ -1,0 +1,6 @@
+﻿<!--
+      *********    NO MODIFIQUE ESTE ARCHIVO     *********
+      Este archivo se regenera mediante una herramienta de diseño.
+       Si realiza cambios en este archivo, puede causar errores.
+-->
+<SampleData:ProjectClass xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.ProjectClass" Description="Maecenas praesent aenean nam mauris nullam sed aliquam class aptent auctor curae dis congue accumsan cursus est integer bibendum dictum quisque cras donec lectus duis vivamus etiam nunc amet dictumst libero eleifend ante facilisi faucibus habitant inceptos" Name="A. Datum Corporation" Image="/StreetPayWP;component/SampleData/ProjectClass/ProjectClass_Files/image01.png" TotalBacked="610" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />

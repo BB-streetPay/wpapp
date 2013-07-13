@@ -1,0 +1,19 @@
+﻿<!--
+      *********    NO MODIFIQUE ESTE ARCHIVO     *********
+      Este archivo se regenera mediante una herramienta de diseño.
+       Si realiza cambios en este archivo, puede causar errores.
+-->
+<SampleData:ProjectDataSource xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.ProjectDataSource" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <SampleData:ProjectDataSource.Collection>
+    <SampleData:Item Name="A. Datum Corporation" Description="Cras nam aliquam integer sed quisque duis nunc vivamus aenean class dis" Image="/StreetPayWP;component/SampleData/ProjectDataSource/ProjectDataSource_Files/image01.png" />
+    <SampleData:Item Name="Adventure Works" Description="Aliquam amet maecenas aliquet ante est blandit hac arcu curae mauris nullam praesent donec aptent commodo auctor conubia accumsan" Image="/StreetPayWP;component/SampleData/ProjectDataSource/ProjectDataSource_Files/image02.png" />
+    <SampleData:Item Name="Adventure Works" Description="Leo diam etiam bibendum dictumst fusce eget lorem cubilia elit mus eleifend congue dapibus nec" Image="/StreetPayWP;component/SampleData/ProjectDataSource/ProjectDataSource_Files/image03.png" />
+    <SampleData:Item Name="Alpine Ski House" Description="Facilisi morbi cursus egestas nulla euismod enim feugiat erat faucibus proin non gravida dictum per" Image="/StreetPayWP;component/SampleData/ProjectDataSource/ProjectDataSource_Files/image04.png" />
+    <SampleData:Item Name="Baldwin Museum of Science" Description="Lectus libero habitant iaculis augue lacinia dolor fames inceptos felis sed" Image="/StreetPayWP;component/SampleData/ProjectDataSource/ProjectDataSource_Files/image05.png" />
+    <SampleData:Item Name="Blue Yonder Airlines" Description="Laoreet interdum lobortis sem ligula nascetur natoque pharetra litora eros nibh placerat nisi sit posuere luctus nisl vel ipsum nunc" Image="/StreetPayWP;component/SampleData/ProjectDataSource/ProjectDataSource_Files/image01.png" />
+    <SampleData:Item Name="City Power &amp; Light" Description="Justo potenti pretium rhoncus lacus pulvinar sagittis lorem odio magnis nam mattis magna massa sed metus sodales dis morbi" Image="/StreetPayWP;component/SampleData/ProjectDataSource/ProjectDataSource_Files/image02.png" />
+    <SampleData:Item Name="Coho Vineyard" Description="Neque orci viverra est senectus pede aliquam mauris mollis integer hac leo netus nulla mus montes sociosqu quam quis quisque" Image="/StreetPayWP;component/SampleData/ProjectDataSource/ProjectDataSource_Files/image03.png" />
+    <SampleData:Item Name="Coho Winery" Description="Nostra nec porta ornare non urna platea primis suscipit torquent cras ultrices duis rutrum vehicula volutpat vivamus aliquam aliquet" Image="/StreetPayWP;component/SampleData/ProjectDataSource/ProjectDataSource_Files/image04.png" />
+    <SampleData:Item Name="Coho Vineyard &amp; Winery" Description="Purus blandit nunc amet commodo ante risus sapien per arcu conubia diam" Image="/StreetPayWP;component/SampleData/ProjectDataSource/ProjectDataSource_Files/image05.png" />
+  </SampleData:ProjectDataSource.Collection>
+</SampleData:ProjectDataSource>

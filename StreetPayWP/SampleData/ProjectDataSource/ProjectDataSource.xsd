@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+      *********    NO MODIFIQUE ESTE ARCHIVO     *********
+      Este archivo se regenera mediante una herramienta de diseño.
+       Si realiza cambios en este archivo, puede causar errores.
+-->
+<xs:schema xmlns:blend="http://schemas.microsoft.com/expression/blend/2008" xmlns:tns="Expression.Blend.SampleData.ProjectDataSource" targetNamespace="Expression.Blend.SampleData.ProjectDataSource" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ProjectDataSource" type="tns:ProjectDataSource" />
+  <xs:complexType name="ProjectDataSource">
+    <xs:sequence>
+      <xs:element name="Collection" type="tns:ItemCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ItemCollection">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="Item" type="tns:Item" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Item">
+    <xs:attribute blend:Format="Nombre de la empresa" name="Name" type="xs:string" />
+    <xs:attribute blend:FormatParameters="20,8" name="Description" type="xs:string" />
+    <xs:attribute name="Image" type="tns:Basic-Image" />
+  </xs:complexType>
+  <xs:simpleType name="Basic-Image">
+    <xs:restriction base="xs:anyURI" />
+  </xs:simpleType>
+</xs:schema>

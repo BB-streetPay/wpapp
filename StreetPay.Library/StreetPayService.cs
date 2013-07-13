@@ -20,7 +20,7 @@ namespace StreetPay.Library
         {
             TaskCompletionSource<RestResponse<T>> tcs = new TaskCompletionSource<RestResponse<T>>();
 
-            client.ExecuteAsync(req, (response) =>
+            client.ExecuteAsync<T>(req, (response) =>
             {
                 tcs.SetResult((RestResponse<T>)response);
             });

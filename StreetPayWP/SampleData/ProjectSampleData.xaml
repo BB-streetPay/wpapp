@@ -1,0 +1,14 @@
+<Library:Project xmlns:Library="clr-namespace:StreetPay.Library;assembly=StreetPay.Library" Description="Curabitur nam aliquam class integer" Id="23" Name="Sed aenean phasellus cras">
+	<Library:Project.Payments>
+		<Library:Payment Money="74" Nick="Maecenas praesent"/>
+		<Library:Payment Money="25" Nick="Accumsan mauris nullam curae duis"/>
+		<Library:Payment Money="55" Nick="Dis consequat bibendum donec"/>
+		<Library:Payment Money="17" Nick="Convallis nunc dictumst"/>
+		<Library:Payment Money="23" Nick="Etiam quisque fusce amet"/>
+		<Library:Payment Money="19" Nick="Lorem vestibulum est dignissim ante"/>
+		<Library:Payment Money="78" Nick="Adipiscing hac elementum morbi parturient"/>
+		<Library:Payment Money="30" Nick="Leo arcu eleifend vestibulum vestibulum"/>
+		<Library:Payment Money="86" Nick="Mus nec"/>
+		<Library:Payment Money="17" Nick="Vivamus facilisis"/>
+	</Library:Project.Payments>
+</Library:Project>

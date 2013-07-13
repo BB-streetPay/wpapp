@@ -26,6 +26,7 @@
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <FodyPath>..\packages\Fody.1.13.11.1</FodyPath>
+    <ExpressionBlendVersion>5.0.30924.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -94,21 +95,35 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LinqToVisualTree.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MetroInMotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SampleData\ProjectClass\ProjectClass.xaml.cs">
+      <DependentUpon>ProjectClass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SampleData\ProjectDataSource\ProjectDataSource.xaml.cs">
+      <DependentUpon>ProjectDataSource.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\MainPageVM.cs" />
     <Compile Include="ViewModels\NavigationService.cs" />
     <Compile Include="ViewModels\ProjectVM.cs" />
     <Compile Include="ViewModels\ScanVM.cs" />
     <Compile Include="ViewModels\VMBase.cs" />
+    <Compile Include="Views\Project.xaml.cs">
+      <DependentUpon>Project.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Scan.xaml.cs">
+      <DependentUpon>Scan.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -116,6 +131,22 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <DesignTimeOnly Include="SampleData\ProjectDataSource\ProjectDataSource.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </DesignTimeOnly>
+    <DesignTimeOnly Include="SampleData\ProjectClass\ProjectClass.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </DesignTimeOnly>
+    <Page Include="Views\Project.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Scan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,6 +271,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="BindableApplicationBar">
+      <HintPath>..\packages\BindableApplicationBar.1.0.0\lib\sl4-windowsphone71\BindableApplicationBar.dll</HintPath>
+    </Reference>
     <Reference Include="GalaSoft.MvvmLight.Extras.WP8">
       <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\WindowsPhone8\GalaSoft.MvvmLight.Extras.WP8.dll</HintPath>
     </Reference>
@@ -269,6 +303,31 @@
       <Project>{CAE83C78-083C-4600-9389-85037BA19D31}</Project>
       <Name>StreetPay.Library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <DesignData Include="SampleData\ProjectSampleData.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+    </DesignData>
+  </ItemGroup>
+  <ItemGroup>
+    <DesignTimeOnly Include="SampleData\ProjectDataSource\ProjectDataSource.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <DesignTimeOnly Include="SampleData\ProjectDataSource\ProjectDataSource_Files\image01.png" />
+    <DesignTimeOnly Include="SampleData\ProjectDataSource\ProjectDataSource_Files\image02.png" />
+    <DesignTimeOnly Include="SampleData\ProjectDataSource\ProjectDataSource_Files\image03.png" />
+    <DesignTimeOnly Include="SampleData\ProjectDataSource\ProjectDataSource_Files\image04.png" />
+    <DesignTimeOnly Include="SampleData\ProjectDataSource\ProjectDataSource_Files\image05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <DesignTimeOnly Include="SampleData\ProjectClass\ProjectClass.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <DesignTimeOnly Include="SampleData\ProjectClass\ProjectClass_Files\image01.png" />
+    <DesignTimeOnly Include="SampleData\ProjectClass\ProjectClass_Files\image02.png" />
+    <DesignTimeOnly Include="SampleData\ProjectClass\ProjectClass_Files\image03.png" />
+    <DesignTimeOnly Include="SampleData\ProjectClass\ProjectClass_Files\image04.png" />
+    <DesignTimeOnly Include="SampleData\ProjectClass\ProjectClass_Files\image05.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
