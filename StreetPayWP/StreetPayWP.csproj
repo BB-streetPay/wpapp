@@ -25,6 +25,7 @@
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <FodyPath>..\packages\Fody.1.13.11.1</FodyPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -103,6 +104,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\MainPageVM.cs" />
+    <Compile Include="ViewModels\NavigationService.cs" />
+    <Compile Include="ViewModels\ProjectVM.cs" />
+    <Compile Include="ViewModels\ScanVM.cs" />
+    <Compile Include="ViewModels\VMBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -115,6 +121,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Fody.targets" />
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -125,6 +134,82 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Dark\add.png" />
+    <Content Include="Assets\Dark\back.png" />
+    <Content Include="Assets\Dark\basecircle.png" />
+    <Content Include="Assets\Dark\cancel.png" />
+    <Content Include="Assets\Dark\check.png" />
+    <Content Include="Assets\Dark\close.png" />
+    <Content Include="Assets\Dark\DarkIcons.dll" />
+    <Content Include="Assets\Dark\delete.png" />
+    <Content Include="Assets\Dark\download.png" />
+    <Content Include="Assets\Dark\edit.png" />
+    <Content Include="Assets\Dark\favs.addto.png" />
+    <Content Include="Assets\Dark\favs.png" />
+    <Content Include="Assets\Dark\feature.alarm.png" />
+    <Content Include="Assets\Dark\feature.calendar.png" />
+    <Content Include="Assets\Dark\feature.camera.png" />
+    <Content Include="Assets\Dark\feature.email.png" />
+    <Content Include="Assets\Dark\feature.phone.png" />
+    <Content Include="Assets\Dark\feature.search.png" />
+    <Content Include="Assets\Dark\feature.settings.png" />
+    <Content Include="Assets\Dark\feature.video.png" />
+    <Content Include="Assets\Dark\folder.png" />
+    <Content Include="Assets\Dark\like.png" />
+    <Content Include="Assets\Dark\microphone.png" />
+    <Content Include="Assets\Dark\minus.png" />
+    <Content Include="Assets\Dark\new.png" />
+    <Content Include="Assets\Dark\next.png" />
+    <Content Include="Assets\Dark\overflowdots.png" />
+    <Content Include="Assets\Dark\questionmark.png" />
+    <Content Include="Assets\Dark\refresh.png" />
+    <Content Include="Assets\Dark\save.png" />
+    <Content Include="Assets\Dark\share.png" />
+    <Content Include="Assets\Dark\stop.png" />
+    <Content Include="Assets\Dark\sync.png" />
+    <Content Include="Assets\Dark\transport.ff.png" />
+    <Content Include="Assets\Dark\transport.pause.png" />
+    <Content Include="Assets\Dark\transport.play.png" />
+    <Content Include="Assets\Dark\transport.rew.png" />
+    <Content Include="Assets\Dark\upload.png" />
+    <Content Include="Assets\Light\add.png" />
+    <Content Include="Assets\Light\back.png" />
+    <Content Include="Assets\Light\basecircle.png" />
+    <Content Include="Assets\Light\cancel.png" />
+    <Content Include="Assets\Light\check.png" />
+    <Content Include="Assets\Light\close.png" />
+    <Content Include="Assets\Light\delete.png" />
+    <Content Include="Assets\Light\download.png" />
+    <Content Include="Assets\Light\edit.png" />
+    <Content Include="Assets\Light\favs.addto.png" />
+    <Content Include="Assets\Light\favs.png" />
+    <Content Include="Assets\Light\feature.alarm.png" />
+    <Content Include="Assets\Light\feature.calendar.png" />
+    <Content Include="Assets\Light\feature.camera.png" />
+    <Content Include="Assets\Light\feature.email.png" />
+    <Content Include="Assets\Light\feature.phone.png" />
+    <Content Include="Assets\Light\feature.search.png" />
+    <Content Include="Assets\Light\feature.settings.png" />
+    <Content Include="Assets\Light\feature.video.png" />
+    <Content Include="Assets\Light\folder.png" />
+    <Content Include="Assets\Light\LightIcons.dll" />
+    <Content Include="Assets\Light\like.png" />
+    <Content Include="Assets\Light\microphone.png" />
+    <Content Include="Assets\Light\minus.png" />
+    <Content Include="Assets\Light\new.png" />
+    <Content Include="Assets\Light\next.png" />
+    <Content Include="Assets\Light\overflowdots.png" />
+    <Content Include="Assets\Light\questionmark.png" />
+    <Content Include="Assets\Light\refresh.png" />
+    <Content Include="Assets\Light\save.png" />
+    <Content Include="Assets\Light\share.png" />
+    <Content Include="Assets\Light\stop.png" />
+    <Content Include="Assets\Light\sync.png" />
+    <Content Include="Assets\Light\transport.ff.png" />
+    <Content Include="Assets\Light\transport.pause.png" />
+    <Content Include="Assets\Light\transport.play.png" />
+    <Content Include="Assets\Light\transport.rew.png" />
+    <Content Include="Assets\Light\upload.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -140,12 +225,50 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="FodyWeavers.xml" />
+    <Content Include="MVVMLight.Nuget.Readme.txt" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WP8">
+      <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\WindowsPhone8\GalaSoft.MvvmLight.Extras.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WP8">
+      <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\WindowsPhone8\GalaSoft.MvvmLight.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPToolkit.4.2013.06.11\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\packages\PropertyChanged.Fody.1.40.3\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RestSharp.WindowsPhone, Version=104.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.104.1\lib\sl4-wp71\RestSharp.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.wp8.0">
+      <HintPath>..\packages\ZXing.Net.0.11.0.1\lib\wp8\zxing.wp8.0.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StreetPay.Library\StreetPay.Library.csproj">
+      <Project>{CAE83C78-083C-4600-9389-85037BA19D31}</Project>
+      <Name>StreetPay.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
@@ -157,4 +280,5 @@
   </Target>
   -->
   <ProjectExtensions />
+  <Import Project="Fody.targets" />
 </Project>

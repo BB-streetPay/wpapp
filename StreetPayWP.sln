@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetPayWP", "StreetPayWP\StreetPayWP.csproj", "{838164D1-C5DA-4DC8-A53F-5505D0EBBCC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreetPay.Library", "StreetPay.Library\StreetPay.Library.csproj", "{CAE83C78-083C-4600-9389-85037BA19D31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,18 @@ Global
 		{838164D1-C5DA-4DC8-A53F-5505D0EBBCC5}.Release|x86.ActiveCfg = Release|x86
 		{838164D1-C5DA-4DC8-A53F-5505D0EBBCC5}.Release|x86.Build.0 = Release|x86
 		{838164D1-C5DA-4DC8-A53F-5505D0EBBCC5}.Release|x86.Deploy.0 = Release|x86
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Debug|ARM.ActiveCfg = Debug|ARM
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Debug|ARM.Build.0 = Debug|ARM
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Debug|x86.ActiveCfg = Debug|x86
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Debug|x86.Build.0 = Debug|x86
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Release|ARM.ActiveCfg = Release|ARM
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Release|ARM.Build.0 = Release|ARM
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Release|x86.ActiveCfg = Release|x86
+		{CAE83C78-083C-4600-9389-85037BA19D31}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
