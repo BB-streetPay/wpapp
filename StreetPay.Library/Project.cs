@@ -8,19 +8,22 @@ namespace StreetPay.Library
 {
     public class Project
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public List<Payment> Payments { get; set;}
+        public string ImageUrl { get; set; }
         public string Image
         {
             get
             {
-                return Name.Replace(' ', '.') + ".jpg.to";
+                return String.IsNullOrWhiteSpace(ImageUrl) ?
+                    "http://" + Name.Replace(' ', '.') + ".jpg.to"
+                    : ImageUrl;
             }
         }
 
-        public int Funded
+        public double Funded
         {
             get
             {

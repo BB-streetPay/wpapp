@@ -20,12 +20,13 @@ namespace StreetPayWP.ViewModels
         public string Name { get; set; }
         public string Image { get; set; }
         public string Description { get; set; }
-        public int TotalBacked { get; set; }
+        public double TotalBacked { get; set; }
         public ICommand PayProject { get; set; }
         public int MoneyToPay { get; set; }
 
         public ProjectVM()
         {
+            MoneyToPay = 5;
             Name = Project.Name;
             Image = Project.Image;
             Description = Project.Description;

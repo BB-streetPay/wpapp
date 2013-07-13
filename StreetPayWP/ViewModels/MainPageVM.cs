@@ -25,7 +25,7 @@ namespace StreetPayWP.ViewModels
         {
             this.PropertyChanged += (s, e) =>
             {
-                if (e.PropertyName == "SelectedProject")
+                if (e.PropertyName == "SelectedProject" && SelectedProject != null)
                 {
                     ProjectVM.Project = SelectedProject;
                     Navigator.NavigateTo("/Views/Project.xaml");
@@ -34,7 +34,7 @@ namespace StreetPayWP.ViewModels
 
             AddProject = new RelayCommand(() =>
             {
-               
+                Navigator.NavigateTo("/Views/AddProject.xaml");
             });
 
             ScanImage = new RelayCommand(() =>
@@ -55,14 +55,16 @@ namespace StreetPayWP.ViewModels
             if (response == null)
                 return;
 
-            if (response.StatusCode != System.Net.HttpStatusCode.OK)
+            if (response.StatusCode != System.Net.HttpStatusCode.OK || response.Data == null)
             {
                 ShowMessage("Error cargando proyectos: {0}, {1}", response.StatusCode, response.Content);
                 return;
             }
 
             if (Projects != null)
-                Projects.BulkAdd(response.Data);
+                foreach(var proj in response.Data)
+                    if(!Projects.Any(x => x.Id == proj.Id))
+                        Projects.Add(proj);
         }
 
     }

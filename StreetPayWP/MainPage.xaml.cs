@@ -24,6 +24,7 @@ namespace StreetPayWP
             DataContext = viewModel;
             viewModel.IsLoading = true;
             this.Loaded += (s, e) => viewModel.OnLoad();
+            this.Loaded += (s, e) => lst.SelectedIndex = -1;
         }
 
         // Código de ejemplo para compilar una ApplicationBar traducida

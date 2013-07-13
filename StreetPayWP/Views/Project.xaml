@@ -62,11 +62,11 @@
 					<Run Text="€"/>
                 </TextBlock>
             </Border>
-            <TextBlock Margin="395,65,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" FontFamily="Segoe WP Light" TextAlignment="Right">
-        		<Run  Text="{Binding TotalBacked}"  />
+            <TextBlock Margin="0,64,10,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Segoe WP Light" TextAlignment="Right" HorizontalAlignment="Right" Width="100" RenderTransformOrigin="-0.208,0.493">
+        		<Run Text="{Binding TotalBacked}"  />
 				<Run Text="€" />
             </TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="297,25,0,0" TextWrapping="Wrap" Text="Recaudado" VerticalAlignment="Top" Width="154" FontSize="29.333" FontFamily="Segoe WP Light" TextAlignment="Right"/>
+            <TextBlock HorizontalAlignment="Left" Margin="292,25,0,0" TextWrapping="Wrap" Text="Recaudado" VerticalAlignment="Top" Width="154" FontSize="29.333" FontFamily="Segoe WP Light" TextAlignment="Right"/>
         </Grid>
     </Grid>
 

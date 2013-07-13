@@ -15,30 +15,24 @@ namespace StreetPayWP.ViewModels
 {
     public class ScanVM : VMBase
     {
-
         public ScanVM()
         {
         }
 
-
-
-        private int GetIdFrom(string text)
+        private string GetIdFrom(string text)
         {
-            var slashIndex = text.LastIndexOf('/');
+            var slashIndex = text.LastIndexOf('=');
             if (slashIndex == -1 || slashIndex == text.Length - 1)
-                return -1;
-            int num = -1;
-            if (int.TryParse(text.Substring(slashIndex + 1), out num))
-                return num;
-            else
-                return -1;
+                return "";
+
+            return text.Substring(slashIndex + 1);
         }
 
         internal void Scanned(string text)
         {
             var id = GetIdFrom(text);
 
-            if (id == -1)
+            if (string.IsNullOrWhiteSpace(id))
             {
                 ShowMessage("The code is invalid");
                 return;
@@ -60,7 +54,7 @@ namespace StreetPayWP.ViewModels
                 else
                 {
                     ProjectVM.Project = r.Data;
-                    Navigator.NavigateTo("Pages/Project.xaml");
+                    Deployment.Current.Dispatcher.BeginInvoke(() => Navigator.NavigateTo("/Views/Project.xaml"));
                 }
             });
         }

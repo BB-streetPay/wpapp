@@ -90,7 +90,7 @@
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-        	<ListBox HorizontalAlignment="Left" Height="622" SelectedItem="{Binding SelectedProject, Mode=TwoWay}"  toolkit:TiltEffect.IsTiltEnabled="True" toolkit:TurnstileFeatherEffect.FeatheringIndex="0" ItemTemplate="{StaticResource ItemTemplate}" ItemsSource="{Binding Collection}" VerticalAlignment="Top" Width="456"/>
+        	<ListBox HorizontalAlignment="Left" Height="622" SelectedItem="{Binding SelectedProject, Mode=TwoWay}" x:Name="lst" toolkit:TiltEffect.IsTiltEnabled="True" toolkit:TurnstileFeatherEffect.FeatheringIndex="0" ItemTemplate="{StaticResource ItemTemplate}" ItemsSource="{Binding Projects}" VerticalAlignment="Top" Width="456"/>
 
         </Grid>
 
@@ -107,6 +107,8 @@
     <bar:Bindable.ApplicationBar>
         <bar:BindableApplicationBar>
             <bar:BindableApplicationBarButton Text="escanear" IconUri="/Assets/Dark/feature.camera.png" Command="{Binding ScanImage}" />
+            <bar:BindableApplicationBarButton Text="añadir" IconUri="/Assets/Dark/add.png" Command="{Binding AddProject}" />
+
         </bar:BindableApplicationBar>
     </bar:Bindable.ApplicationBar>
 </phone:PhoneApplicationPage>
